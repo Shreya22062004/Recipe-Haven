@@ -1,0 +1,159 @@
+:root {
+  --main-orange: #ff7043;
+  --main-pink: #ff5eae;
+  --main-purple: #7c3aed;
+  --main-dark: #23272f;
+  --main-light: #f8f9fc;
+  --main-white: #fff;
+  --accent: #ffe3d5;
+  --gradient: linear-gradient(90deg, #ff7043 0%, #ff5eae 80%, #7c3aed 100%);
+}
+
+/* Modal Overlay */
+.auth-modal {
+  display: flex;
+  position: fixed;
+  z-index: 1001;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(44, 37, 62, 0.22);
+  justify-content: center;
+  align-items: center;
+  animation: fadeInModal 0.4s;
+}
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Modal Content Card */
+.auth-modal-content {
+  background: #fff;
+  padding: 2.2rem 2.5rem 2rem 2.5rem;
+  border-radius: 14px;
+  position: relative;
+  min-width: 340px;
+  max-width: 98vw;
+  box-shadow: 0 8px 32px #ff5eae33, 0 2px 14px #7c3aed22;
+  animation: popIn 0.5s;
+  font-family: inherit;
+}
+@keyframes popIn {
+  0% { transform: scale(0.9); opacity: 0;}
+  80% { transform: scale(1.05);}
+  100% { transform: scale(1); opacity: 1;}
+}
+
+/* Close Button */
+.close-auth {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.7rem;
+  color: var(--main-orange);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.2s;
+}
+.close-auth:hover {
+  color: var(--main-pink);
+}
+
+/* Form Inputs & Buttons */
+.auth-modal-content input,
+.auth-modal-content button {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
+  border-radius: 7px;
+  border: 1px solid #ffab91;
+  font-size: 1rem;
+  background: #fafafa;
+  color: #23272f;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.auth-modal-content input:focus {
+  border: 1.5px solid var(--main-pink);
+  box-shadow: 0 0 0 2px #ffab91;
+}
+.auth-modal-content button {
+  background: var(--gradient);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px #ff5eae33;
+}
+.auth-modal-content button:hover {
+  background: linear-gradient(90deg, #7c3aed 0%, #ff5eae 100%);
+  color: #fff;
+}
+
+/* Auth Header Controls */
+.header-auth {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+.sign-in-btn, .sign-up-btn, .signout-btn {
+  background: none;
+  border: 2px solid var(--main-pink);
+  color: var(--main-pink);
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 7px;
+  cursor: pointer;
+  background: var(--main-white);
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.sign-up-btn {
+  background: var(--main-pink);
+  color: #fff;
+  border: none;
+}
+.sign-in-btn:hover, .signout-btn:hover {
+  background: var(--main-orange);
+  color: #fff;
+  border: 2px solid var(--main-orange);
+}
+.sign-up-btn:hover {
+  background: var(--main-orange);
+  color: #fff;
+}
+.welcome-msg {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Auth Modal Headings & Messages */
+.auth-modal-content h2 {
+  color: var(--main-pink);
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.auth-modal-content .auth-message {
+  color: #ff7043;
+  font-size: 1.01rem;
+  margin-bottom: 0.7rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .auth-modal-content {
+    min-width: 90vw;
+    padding: 1rem;
+  }
+}
