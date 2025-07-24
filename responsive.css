@@ -83,7 +83,8 @@
   #modal .modal-content {
     min-width: 95vw;
     padding: 1.2rem;
-    overflow: visible;
+    overflow: hidden;
+    overflow-y: scroll;
   }
 
   #modal .page-btn {
